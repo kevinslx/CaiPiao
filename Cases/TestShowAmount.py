@@ -14,7 +14,7 @@ abspath = os.path.abspath('.')
 class ShowAmount(unittest.TestCase):
 	"""测试金额显示"""
 	def setUp(self):
-		self.driver = webdriver.Chrome()
+		self.driver = webdriver.Firefox()
 		self.url = 'http://cp.lesports.com/'
 		self.username = ("13701334231")
 		self.password = ("monkeysun")

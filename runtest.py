@@ -2,7 +2,8 @@ import unittest
 from HTMLTestRunner import HTMLTestRunner
 import time
 import xlrd
-import sys, os
+import sys
+import os
 
 # 获取根目录路径
 abspath = os.path.abspath('.')
