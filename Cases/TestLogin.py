@@ -30,6 +30,15 @@ class Login(unittest.TestCase):
 		login_page.input_password(self.password)
 		login_page.click_submit()
 
+		cookie = main_page.get_cookies()
+		print(cookie)
+
+		print(bool(login_page.find_element(*login_page.verifycode_loc)))
+
+		if bool(login_page.find_element(*login_page.verifycode_loc)):
+			print("请手动输入验证码，并点击再次点击登录按钮")
+			time.sleep(5)
+
 		now = time.strftime('%Y-%m-%d_%H_%M_%S')
 		self.driver.get_screenshot_as_file(abspath + '\ScreenShot\\' + now + '_login_success.jpg')
 		nickname = main_page.find_nickname()

@@ -2,13 +2,18 @@
 from selenium import webdriver
 import time
 import unittest
+import os
 
 
 class Login(unittest.TestCase):
 	def setUp(self):
-		self.browser = webdriver.Chrome()
+		cookie_dir = r"C:\Users\sunliangxing\AppData\Local\Google\Chrome\User Data"
+		chrome_options = webdriver.ChromeOptions()
+		chrome_options.add_argument("user-data-dir="+os.path.abspath(cookie_dir))
+		self.browser = webdriver.Chrome(chrome_options=chrome_options)
 		self.browser.maximize_window()
 		test_url = 'http://cp.lesports.com/'
+
 		self.browser.get(test_url)
 
 	def login(self, username, password):

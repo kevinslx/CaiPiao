@@ -9,6 +9,7 @@ class LoginPage(BasePage):
 	password_loc = (By.NAME, "password")
 	submit_loc = (By.ID, "sdklogin")
 	loginerror_loc = (By.XPATH, '//*[@id="login_zh_cn"]/div[2]/div[1]/div[2]/span')
+	verifycode_loc = (By.NAME, 'regcode')
 
 	# 输入用户名
 	def input_username(self, username):

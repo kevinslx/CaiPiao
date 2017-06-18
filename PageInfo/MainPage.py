@@ -21,7 +21,7 @@ class MainPage(BasePage):
 
 	# 切换页面
 	def swith_window(self):
-		self.driver.switch_to_window(self.driver.window_handles[0])
+		self.driver.switch_to.window(self.driver.window_handles[0])
 
 	# 定位昵称元素
 	def find_nickname(self):
