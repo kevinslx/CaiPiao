@@ -24,16 +24,11 @@ class Login(unittest.TestCase):
 		main_page = MainPage(self.driver, self.url)
 		main_page.open()
 		main_page.click_loginbutton()
-		main_page.swith_window()
+		main_page.switch_window()
 		login_page = LoginPage(self.driver, self.url)
 		login_page.input_username(self.username)
 		login_page.input_password(self.password)
 		login_page.click_submit()
-
-		cookie = main_page.get_cookies()
-		print(cookie)
-
-		print(bool(login_page.find_element(*login_page.verifycode_loc)))
 
 		if bool(login_page.find_element(*login_page.verifycode_loc)):
 			print("请手动输入验证码，并点击再次点击登录按钮")
@@ -49,7 +44,7 @@ class Login(unittest.TestCase):
 		main_page = MainPage(self.driver, self.url)
 		main_page.open()
 		main_page.click_loginbutton()
-		main_page.swith_window()
+		main_page.switch_window()
 		login_page = LoginPage(self.driver, self.url)
 		login_page.input_username(self.wrongusername)
 		login_page.input_password(self.password)

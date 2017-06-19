@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from PageInfo.BasePage import BasePage
 from PageInfo.LoginPage import LoginPage
 from selenium.webdriver.common.action_chains import *
+from Common import common
 
 
 class MainPage(BasePage):
@@ -20,7 +21,7 @@ class MainPage(BasePage):
 		self.find_element(*self.loginbutton_loc).click()
 
 	# 切换页面
-	def swith_window(self):
+	def switch_window(self):
 		self.driver.switch_to.window(self.driver.window_handles[0])
 
 	# 定位昵称元素
@@ -45,3 +46,6 @@ class MainPage(BasePage):
 
 	def change_show_hide(self):
 		self.find_element(*self.showhideamount_loc).click()
+
+	def login(self, username, password):
+		common.login(self, username, password)

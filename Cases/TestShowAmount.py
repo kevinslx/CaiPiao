@@ -14,22 +14,17 @@ abspath = os.path.abspath('.')
 class ShowAmount(unittest.TestCase):
 	"""测试金额显示"""
 	def setUp(self):
-		self.driver = webdriver.Firefox()
+		self.driver = webdriver.Chrome()
 		self.url = 'http://cp.lesports.com/'
 		self.username = ("13701334231")
 		self.password = ("monkeysun")
 
 	def test_showamount(self):
 		"""测试金额明文及暗纹显示"""
-		#登录
 		main_page = MainPage(self.driver, self.url)
 		main_page.open()
-		main_page.click_loginbutton()
-		main_page.swith_window()
-		login_page = LoginPage(self.driver, self.url)
-		login_page.input_username(self.username)
-		login_page.input_password(self.password)
-		login_page.click_submit()
+		#登录
+		main_page.login(self.username,self.password)
 		#鼠标悬停
 		main_page.mousemove_to_nickname()
 		now = time.strftime('%Y-%m-%d_%H_%M_%S')
